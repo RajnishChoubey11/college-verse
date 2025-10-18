@@ -1,0 +1,35 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const Navbar = () => {
+  const pathname = usePathname();
+  const links = [
+    { name: "Home", path: "/", color: 'from-purple-400 to-pink-400' },
+    { name: "University", path: "/university",  color: 'from-indigo-400 to-sky-400' },
+    { name: "Engineering", path: "/engineering", color: 'from-rose-400 to-pink-400' },
+    { name: "Medical", path: "/medical", color: 'from-amber-400 to-orange-400'},
+    { name: "Management", path: "/management", color: 'from-emerald-400 to-teal-400'},
+    { name: "Pharmacy", path: "/pharmacy", color: 'from-green-400 to-blue-400'},
+  ];
+  return (
+    <nav class="max-w-7xl mx-auto px-6">
+      <div class="glass rounded-2xl p-3 sm:p-4 shadow-xl">
+        <div id="categoryTabs" class="flex gap-2 overflow-x-auto soft-scroll">
+          {links.map((link) => (
+            <Link
+              key={link.path}
+              href={link.path}
+              className={
+                pathname === link.path
+                  ? "text-blue-500 font-bold"
+                  : "text-gray-700"
+              }
+            >{link.name}</Link>
+          ))}
+        </div>
+      </div>
+    </nav>
+  );
+};
+export default Navbar;
