@@ -29,15 +29,18 @@
   background: rgba(255,255,255,0.06);
   transition: background .2s ease, color .2s ease, transform .2s ease;
 }
-.chip.active {
-  background: rgba(99,102,241,0.25);
-  color: #e0e7ff;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(99,102,241,0.25);
-}
 .soft-scroll::-webkit-scrollbar { height: 8px; width: 8px; }
 .soft-scroll::-webkit-scrollbar-thumb {
   background: rgba(255,255,255,0.2);
   border-radius: 999px;
 }
 .soft-scroll::-webkit-scrollbar-track { background: transparent; }
+
+.image-section{
+  transition: all;
+  transition-duration: 0.5s;
+}
+.info-card:hover .image-section {
+  transition-duration: 0.5s;
+  height: 230px;
+}

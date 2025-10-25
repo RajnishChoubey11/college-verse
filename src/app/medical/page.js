@@ -1,5 +1,5 @@
 "use client";
-import { Header, Navbar, Pagination, Footer } from "../../components";
+import { Header, Navbar, Pagination, Footer } from "../../../components";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -11,7 +11,7 @@ export default function Home() {
   const itemsPerPage = 20;
 
   useEffect(() => {
-    fetch("/api/best")
+    fetch("/api/medical")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -109,7 +109,7 @@ export default function Home() {
         </div>
 
         {/* Heading */}
-        <div className="heading text-2xl font-semibold my-6">Best Colleges</div>
+        <div className="heading text-2xl font-semibold my-6">Medical</div>
 
         {/* College List */}
         <div id="bigBox" className="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
