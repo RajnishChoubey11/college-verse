@@ -3,7 +3,8 @@ import { Header, Navbar, Pagination, Footer } from "../../../components";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-export default function Home() {
+
+export default function Engineering() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState([]);
@@ -116,15 +117,15 @@ export default function Home() {
           {currentItems.length > 0 ? (
             currentItems.map((item) => (
               <Link
-                href={`/${item.Category}/${item._id}`}
-                className="info-card glass rounded-2xl p-5 sm:p-6 shadow-xl shine transition"
+                href={`/engineering/${item._id}`}
+                className="info-card glass rounded-2xl p-5 sm:p-6 shadow-xl shine transition flex flex-col"
                 key={item._id}
               >
                 <div className="h-80 bg-white rounded-2xl flex justify-center items-center">
                   <img
                     src={item.image}
                     alt={item.Name}
-                    className="image-section w-auto h-50 object-cover"
+                    className="image-section w-auto h-50 object-cover mx-auto"
                   />
                 </div>
                 <div className="flex items-start justify-between gap-3 mt-6">
@@ -146,7 +147,7 @@ export default function Home() {
                     <div className="text-2xl font-bold">${item.score}</div>
                   </div>
                 </div>
-                <div className="mt-4 flex items-center justify-between">
+                <div className="mt-auto pt-4 flex justify-between">
                   <button
                     type="button"
                     className="px-3 py-2 rounded-lg chip hover:bg-white/10 text-sm"

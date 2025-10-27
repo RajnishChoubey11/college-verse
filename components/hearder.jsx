@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header className="relative">
-      <div className="max-w-7xl mx-auto px-6 pt-10 pb-6">
+      <div className="max-w-7xl mx-auto px-6 pt-4 pb-6 sm:pt-10">
         <div className="flex items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-3">
