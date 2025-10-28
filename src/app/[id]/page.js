@@ -7,8 +7,6 @@ export default function Details() {
   const { id } = useParams();
   const router = useRouter();
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!id) return;
@@ -35,18 +33,6 @@ export default function Details() {
         setLoading(false);
       });
   }, [id]);
-
-  if (loading) {
-    return <div className="Details">Loading...</div>;
-  }
-
-  if (error) {
-    return <div className="Details">Error: {error}</div>;
-  }
-
-  if (!data) {
-    return <div className="Details">No data found</div>;
-  }
 
   return (
     <div className="Details min-h-screen bg-orbit text-white antialiased p-4 sm:p-6">

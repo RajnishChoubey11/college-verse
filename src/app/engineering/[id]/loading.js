@@ -1,6 +1,6 @@
 export default function Loading() {
   return (
-    <div className="fixed inset-0 z-50 loading-overlay bg-black/40 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 loading-overlay bg-orbit flex items-center justify-center">
       <div className="relative glass rounded-3xl p-8 max-w-sm w-full mx-4 text-center">
         <div className="mb-6 flex justify-center">
           <div className="relative">

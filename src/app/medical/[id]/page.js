@@ -36,18 +36,6 @@ export default function Details() {
     });
   },[id]);
 
-  if (loading) {
-    return <div className="Details">Loading...</div>;
-  }
-
-  if (error) {
-    return <div className="Details">Error: {error}</div>;
-  }
-
-  if (!data) {
-    return <div className="Details">No data found</div>;
-  }
-
   return (
     <div className="Details min-h-screen bg-orbit text-white antialiased p-12">
       <div className="flex items-center gap-4 mb-6">
