@@ -4,15 +4,11 @@ import { useParams, useRouter } from "next/navigation";
 
 export default function Details() {
 
-  const {id,Category} = useParams();
+  const {id} = useParams();
   const router = useRouter();
   const[data,setData] = useState(null);
 
   useEffect(()=>{
-    if (!id) return;
-    
-    setLoading(true);
-    setError(null);
     
     fetch(`/api/engineering/${id}`)
     .then((response) => {
@@ -24,13 +20,10 @@ export default function Details() {
     .then((data) => {
       console.log('Fetched data:', data);
       setData(data);
-      setLoading(false);
     })
     .catch((error) => {
       console.error('Error in data fetching:', error);
-      setError(error.message);
       setData(null);
-      setLoading(false);
     });
   },[id]);
 
