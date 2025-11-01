@@ -115,7 +115,7 @@ export default function Home() {
           {currentItems.length > 0 ? (
             currentItems.map((item) => (
               <Link
-                href={`/${item._id}`}
+                href={`/management/${item._id}`}
                 className="info-card glass rounded-2xl p-3 sm:p-6 shadow-xl shine transition flex flex-col max-w-xl w-full mx-auto"
                 key={item._id}
               >

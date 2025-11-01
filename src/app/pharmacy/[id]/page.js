@@ -48,7 +48,7 @@ export default function Pharmacy() {
           </svg>
           Back
         </button>
-        <div className="grid grid-cols-1 lg:[grid-template-columns:1fr_3fr] gap-4 items-start">
+        <div className="grid grid-cols-1 lg:[grid-template-columns:1fr_3fr] gap-6 sm:gap-4 items-start">
           {/* Image Section */}
           <div>
             <div className="w-35 aspect-square sm:h-60 sm:w-full sm:aspect-auto bg-white rounded-2xl flex justify-center items-center px-3 py-2 sm:px-4 sm:py-4 mx-auto sm:mx-0">
@@ -84,7 +84,7 @@ export default function Pharmacy() {
                 <circle cx="300" cy="80" r="40" fill="white" />
                 <circle cx="500" cy="240" r="50" fill="white" />
               </svg>
-              <div className="absolute left-6 top-6">
+              <div className="absolute left-4 top-4 sm:left-6 sm:top-6">
                 <div className="flex flex-col justify-center">
                   <div className="flex flex-row items-center">
                     <div className="p-4 rounded-2xl bg-white/20 flex items-center justify-center font-bold text-2xl backdrop-blur-sm sm:text-4xl">
@@ -102,7 +102,7 @@ export default function Pharmacy() {
                   </p>
                 </div>
               </div>
-              <div className="absolute right-6 bottom-6 text-5xl opacity-80 sm:text-7xl">
+              <div className="absolute right-4 bottom-4 text-5xl opacity-80 sm:text-7xl sm:right-6 sm:bottom-6">
                 {data?.Category === "Engineering"
                   ? "⚙️"
                   : data?.Category === "Medical"
@@ -139,7 +139,7 @@ export default function Pharmacy() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="glass rounded-2xl p-6">
+          <div className="glass rounded-2xl p-4 sm:p-6">
             <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-indigo-400"></span>
               About College
@@ -168,7 +168,7 @@ export default function Pharmacy() {
             </div>
           </div>
 
-          <div className="glass rounded-2xl p-6">
+          <div className="glass rounded-2xl p-4 sm:p-6">
             <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-400"></span>
               Placement Stats
@@ -197,7 +197,7 @@ export default function Pharmacy() {
             </div>
           </div>
 
-          <div className="glass rounded-2xl p-6">
+          <div className="glass rounded-2xl p-4 sm:p-6">
             <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-yellow-400"></span>
               Courses Offered
@@ -216,7 +216,7 @@ export default function Pharmacy() {
             </div>
           </div>
 
-          <div className="glass rounded-2xl p-6">
+          <div className="glass rounded-2xl p-4 sm:p-6">
             <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-pink-400"></span>
               Facilities

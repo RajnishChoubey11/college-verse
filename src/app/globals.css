@@ -44,6 +44,12 @@
   transition-duration: 0.5s;
   height: 230px;
 }
+@media screen and (max-width: 640px) {
+  .info-card:hover .image-section {
+    transition-duration: 0.5s;
+    height: 160px;
+  }
+}
 
 /* Loading Animations */
 @keyframes spin {
