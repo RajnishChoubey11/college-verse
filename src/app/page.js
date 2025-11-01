@@ -1,5 +1,5 @@
 "use client";
-import { Header, Navbar, Pagination, Footer } from "../../components";
+import { Navbar, Pagination } from "../../components";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -63,10 +63,9 @@ export default function Home() {
     }
   };
   return (
-    <div className="App min-h-screen bg-orbit text-white antialiased">
-      <Header />
+    <div className="App text-white antialiased">
       <Navbar />
-      <div className="max-w-7xl mx-auto px-6 flex-grow p-6">
+      <div className="max-w-7xl mx-auto">
         {/* Search Bar */}
         <div className="md:col-span-5">
           <form id="searchForm" className="w-full" autoComplete="off">
@@ -117,17 +116,17 @@ export default function Home() {
             currentItems.map((item) => (
               <Link
                 href={`/${item._id}`}
-                className="info-card glass rounded-2xl p-5 sm:p-6 shadow-xl shine transition flex flex-col"
+                className="info-card glass rounded-2xl p-3 sm:p-6 shadow-xl shine transition flex flex-col max-w-xl w-full mx-auto"
                 key={item._id}
               >
-                <div className="h-80 bg-white rounded-2xl flex justify-center items-center">
+                <div className="h-50 sm:h-80 w-full bg-white rounded-2xl grid place-items-center mx-auto">
                   <img
                     src={item.image}
                     alt={item.Name}
-                    className="image-section w-auto h-50 object-cover"
+                    className="image-section w-auto h-40 sm:h-50 object-cover"
                   />
                 </div>
-                <div className="flex items-start justify-between gap-3 mt-6">
+                <div className="flex items-start justify-between gap-3 mt-3 sm:mt-6">
                   <div className="flex items-center gap-3">
                     <div className="min-w-[48px] h-12 grid place-items-center rounded-xl font-bold text-lg shadow bg-gradient-to-r from-yellow-300 to-amber-400 text-gray-900">
                       #{item.Rank}
@@ -163,7 +162,7 @@ export default function Home() {
               </Link>
             ))
           ) : (
-            <h1 className="col-span-full text-center text-gray-500">
+            <h1 className="col-span-full text-center text-gray-500 text-xl">
               No Result Found
             </h1>
           )}
@@ -176,7 +175,6 @@ export default function Home() {
           onPageChange={handlePageChange}
         />
       </div>
-      <Footer />
     </div>
   );
 }

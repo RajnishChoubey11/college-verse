@@ -21,9 +21,6 @@ export default function Loading() {
           </div>
           <div className="mt-2 text-xs text-indigo-200/60">Loading…</div>
         </div>
-        <div className="absolute -top-4 -left-4 text-2xl opacity-60 loading-float">🎓</div>
-        <div className="absolute -top-2 -right-6 text-xl opacity-40 loading-float" style={{ animationDelay: '1s' }}>📚</div>
-        <div className="absolute -bottom-4 -right-2 text-lg opacity-50 loading-float" style={{ animationDelay: '2s' }}>🏛️</div>
       </div>
     </div>
   );

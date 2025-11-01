@@ -15,7 +15,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="max-w-7xl mx-auto px-6">
+    <nav className="max-w-7xl mx-auto pb-6">
       <div className="glass rounded-2xl p-3 sm:p-4 shadow-xl">
         <div id="categoryTabs" className="flex gap-2 overflow-x-auto soft-scroll">
           {links.map((link) => {

@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { Header } from "../../../components";
 
 export default function Details() {
   const { id } = useParams();
@@ -28,8 +27,7 @@ export default function Details() {
   }, [id]);
 
   return (
-    <div className="Details min-h-screen bg-orbit text-white antialiased p-4 sm:p-6">
-      <Header />
+    <div className="Details text-white antialiased py-4 sm:py-6">
       <div className="max-w-7xl mx-auto mb-6">
         <button
           onClick={() => router.back()}
@@ -50,10 +48,10 @@ export default function Details() {
           </svg>
           Back
         </button>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:[grid-template-columns:1fr_3fr] gap-4 items-start">
           {/* Image Section */}
-          <div className="lg:col-span-1">
-            <div className="h-40 w-40 bg-white rounded-2xl flex justify-center items-center p-4 sm:h-60 sm:w-auto">
+          <div>
+            <div className="w-35 aspect-square sm:h-60 sm:w-full sm:aspect-auto bg-white rounded-2xl flex justify-center items-center px-3 py-2 sm:px-4 sm:py-4 mx-auto sm:mx-0">
               <img
                 src={data?.image}
                 alt={data?.Name}
@@ -63,7 +61,7 @@ export default function Details() {
           </div>
 
           {/* Info Section */}
-          <div className="lg:col-span-2">
+          <div>
             <div
               className={`relative overflow-hidden rounded-2xl h-40 bg-gradient-to-r sm:h-60 ${
                 data?.Category === "Engineering"

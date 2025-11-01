@@ -1,4 +1,4 @@
-import Link from "next/link";
+"use client";
 
 const Footer = () => {
   return (
@@ -8,7 +8,15 @@ const Footer = () => {
           © <span id="curYear"></span> College Verse. All rights reserved.
         </div>
         <div className="flex gap-2">
-          <button className="chip px-3 py-1.5 rounded-lg">
+          <button
+            type="button"
+            onClick={() => {
+              if (typeof window !== "undefined") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+            className="chip px-3 py-1.5 rounded-lg"
+          >
             Back to top
           </button>
         </div>
