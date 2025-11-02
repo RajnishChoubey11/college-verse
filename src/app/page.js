@@ -7,10 +7,12 @@ export default function Home() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
 
   useEffect(() => {
+    setLoading(true);
     fetch("/api/best")
       .then((response) => {
         if (!response.ok) {
@@ -21,8 +23,14 @@ export default function Home() {
       .then((data) => {
         setData(data);
         setFilteredData(data);
+        setLoading(false);
       })
-      .catch((err) => console.error("Fetch error:", err));
+      .catch((err) => {
+        console.error("Fetch error:", err);
+        setData(false);
+        setFilteredData(false);
+        setLoading(false);
+      });
   }, []);
 
   const handleSearch = (event) => {
@@ -62,6 +70,10 @@ export default function Home() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
+
+  if (loading || !data) {
+    return <Loading />;
+  }
   return (
     <div className="App text-white antialiased">
       <Navbar />
@@ -162,7 +174,11 @@ export default function Home() {
               </Link>
             ))
           ) : (
-            <Loading />
+            <div className="flex items-center justify-center col-span-full">
+              <h1 className="text-xl text-indigo-200/80">
+                No Result Found
+              </h1>
+            </div>
           )}
         </div>
 

@@ -6,11 +6,13 @@ import Link from "next/link";
 export default function University() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
   const [filteredData, setFilteredData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
 
   useEffect(() => {
+    setLoading(true);
     fetch("/api/university")
       .then((response) => {
         if (!response.ok) {
@@ -21,8 +23,14 @@ export default function University() {
       .then((data) => {
         setData(data);
         setFilteredData(data);
+        setLoading(false);
       })
-      .catch((err) => console.error("Fetch error:", err));
+      .catch((err) => {
+        console.error("Fetch error:", err);
+        setData(false);
+        setFilteredData(false);
+        setLoading(false);
+      });
   }, []);
 
   const handleSearch = (event) => {
@@ -62,6 +70,10 @@ export default function University() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
+
+  if (loading || !data) {
+    return <Loading />;
+  }
   return (
     <div className="App text-white antialiased">
       <Navbar />
