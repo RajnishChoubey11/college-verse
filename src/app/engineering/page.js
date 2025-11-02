@@ -1,5 +1,5 @@
 "use client";
-import { Navbar, Pagination } from "../../../components";
+import { Navbar, Pagination, Loading } from "../../../components";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -162,9 +162,7 @@ export default function Engineering() {
               </Link>
             ))
           ) : (
-            <h1 className="col-span-full text-center text-gray-500 text-xl">
-              No Result Found
-            </h1>
+            <Loading />
           )}
         </div>
 

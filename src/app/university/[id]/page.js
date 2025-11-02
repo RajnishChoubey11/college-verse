@@ -1,13 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import Loading from "./loading";
 
 export default function University() {
   const { id } = useParams();
   const router = useRouter();
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     fetch(`/api/university/${id}`)
       .then((response) => {
         if (!response.ok) {
@@ -18,12 +21,18 @@ export default function University() {
       .then((data) => {
         console.log("Fetched data:", data);
         setData(data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error in data fetching:", error);
         setData(null);
+        setLoading(false);
       });
   }, [id]);
+
+  if (loading || !data) {
+    return <Loading />;
+  }
 
   return (
     <div className="Details text-white antialiased py-4 sm:py-6">
