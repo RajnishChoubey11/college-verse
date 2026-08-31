@@ -13,7 +13,7 @@ export default function Home() {
 
   useEffect(() => {
     setLoading(true);
-    fetch("/api/best")
+    fetch("/api/university")
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -120,7 +120,7 @@ export default function Home() {
         </div>
 
         {/* Heading */}
-        <div className="heading text-2xl font-semibold my-6">Best Colleges</div>
+        <div className="heading text-2xl font-semibold my-6">Universities</div>
 
         {/* College List */}
         <div id="bigBox" className="grid md:grid-cols-3 sm:grid-cols-2 gap-6">

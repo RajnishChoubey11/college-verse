@@ -6,8 +6,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const links = [
-    { name: "Home", path: "/", color: "from-purple-400 to-pink-400" },
-    { name: "University", path: "/university", color: "from-indigo-400 to-sky-400" },
+    { name: "University", path: "/", color: "from-indigo-400 to-sky-400" },
     { name: "Engineering", path: "/engineering", color: "from-rose-400 to-pink-400" },
     { name: "Medical", path: "/medical", color: "from-amber-400 to-orange-400" },
     { name: "Management", path: "/management", color: "from-emerald-400 to-teal-400" },
@@ -19,10 +18,12 @@ const Navbar = () => {
       <div className="glass rounded-2xl p-3 sm:p-4 shadow-xl">
         <div id="categoryTabs" className="flex gap-2 overflow-x-auto soft-scroll">
           {links.map((link) => {
-            const isActive = pathname === link.path;
+            const isActive =
+              pathname === link.path ||
+              (link.path === "/" && pathname === "/university");
             return (
               <Link
-                key={link.path}
+                key={link.name}
                 href={link.path}
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300
                   ${isActive 

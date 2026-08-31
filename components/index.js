@@ -1,6 +1,19 @@
-import Header from "./hearder";
+import Header from "./header";
 import Navbar from "./navbar";
 import Footer from "./footer";
-import Pagination from "./pagination"
+import Pagination from "./pagination";
 import Loading from "./loading";
-export { Header, Navbar, Footer, Pagination, Loading};
+import CollegeCard from "./CollegeCard";
+import CollegeList from "./CollegeList";
+import CollegeDetail from "./CollegeDetail";
+
+export {
+  Header,
+  Navbar,
+  Footer,
+  Pagination,
+  Loading,
+  CollegeCard,
+  CollegeList,
+  CollegeDetail,
+};

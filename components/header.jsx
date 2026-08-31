@@ -1,12 +1,15 @@
+"use client";
+import Link from "next/link";
+
 const Header = () => {
   return (
     <header className="relative">
-      <div className="max-w-7xl mx-auto pt-10 pb-6 ">
+      <div className="max-w-7xl mx-auto pt-10 pb-6">
         <div className="flex items-center justify-between gap-6">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl grid place-items-center glass shadow-lg">
-              {/* Simple SVG crest */}
+          <Link href="/" className="flex items-center gap-3 group transition-transform">
+            <div className="w-12 h-12 rounded-2xl grid place-items-center glass shadow-lg group-hover:border-white/20 transition-all">
+              {/* SVG crest */}
               <svg viewBox="0 0 64 64" className="w-7 h-7 text-indigo-300">
                 <defs>
                   <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
@@ -32,15 +35,16 @@ const Header = () => {
                 College Verse
               </h1>
               <p className="text-sm sm:text-base text-indigo-200/80">
-                Discover the top 100 colleges across 5 disciplines
+                Discover top colleges & universities across 5 disciplines
               </p>
             </div>
-          </div>
+          </Link>
+
           {/* Stats */}
           <div className="hidden md:flex items-center gap-3">
             <div className="px-4 py-2 rounded-xl glass">
               <div className="text-indigo-200/80 text-xs">Total Colleges</div>
-              <div className="text-lg font-semibold text-center">500</div>
+              <div className="text-lg font-semibold text-center">450+</div>
             </div>
             <div className="px-4 py-2 rounded-xl glass">
               <div className="text-indigo-200/80 text-xs">Disciplines</div>
@@ -52,4 +56,5 @@ const Header = () => {
     </header>
   );
 };
+
 export default Header;
