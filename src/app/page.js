@@ -102,7 +102,7 @@ export default function Home() {
                 <input
                   id="searchInput"
                   className="bg-transparent outline-none w-full placeholder-indigo-200/60"
-                  placeholder="Try 'Apex', 'Mumbai', or 'Medical'"
+                  placeholder="Try 'Banaras Hindu University', 'Delhi', or 'University'"
                   onChange={handleSearch}
                   value={searchTerm}
                 />
